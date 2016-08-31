@@ -1,0 +1,119 @@
+.container {
+    padding-top:2em;
+    width: 80%;
+}
+
+.form-control{
+    margin-bottom: .5em;
+}
+
+@media (min-width: 1024px) {
+    .container-full {
+        padding: 4em;
+    }
+}
+
+.row{
+    padding-top:1em;
+    min-width: 300px;
+}
+
+.user_opt .btn {
+    margin-top: 6px;
+    margin-left: 4px;
+    padding: 0px 0px 0px 0px;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.user_opt .btn:hover { 
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.user_opt .btn:active{ 
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.cust_id {
+    -float: left;
+    -font-size: 20px;
+}
+
+.bill_sum {
+    color: #28B22C;
+    -float: left;
+    -margin-left: 30px;
+    -font-size: 20px;
+}
+
+.last_activity {
+    -float: left;
+    -margin-left: 30px;
+    -font-size: 20px;
+}
+
+.navtabs li a{
+    color: #000000;
+}
+
+.navtabs li a:hover{
+    background-color: #80bfff !important;
+}
+
+.navtabs .alter_tab {
+    background-color: #f2f2f2;
+}
+
+.nav-pills>li.active>a {
+    background-color: none !important;
+}
+
+.hello
+{
+    font-size: 20px;
+
+
+}
+
+button
+{
+    width: auto;
+
+}
+
+    
+.hidden {
+    display: none !important;
+}
+[ng-cloak]
+{
+    display: none !important;
+}
+
+.btn-default:active:hover,
+.btn-default.active:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.btn-default:active:focus,
+.btn-default.active:focus,
+.open > .dropdown-toggle.btn-default:focus,
+.btn-default:active.focus,
+.btn-default.active.focus,
+.open > .dropdown-toggle.btn-default.focus {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.nl{
+    background-color:#052F6D;color:white;margin-bottom:1em;
+}
+.disabledTab {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.error {
+    color: #ff0000;
+    margin-top: -5px;
+  }

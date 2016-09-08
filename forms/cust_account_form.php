@@ -1,11 +1,11 @@
 <div class="tab-pane fade" id="account">
 <form  action="" method="POST" id="cust_account_form">
-        <div class="grid_9" style="margin-top:-35px;">
-            <div class="grid_9">
+        <div class="grid_10" style="margin-top:-35px;">
+            <div class="grid_5 alpha">
                 <label class="<?php echo $check; ?>">Business Name<label class="error rem-bor" for="acc_b_name" generated="true"></label></label>
                 <input type="text" name="acc_b_name" class="form-control" placeholder="Business Name" value="<?php echo $business_name; ?>">
             </div>
-            <div class="col-md-6">
+            <div class="grid_4 omega">
                 <label class="<?php echo $check; ?>">Business Category</label>
                 <select class="form-control" name="acc_category">
                 <?php 
@@ -37,8 +37,8 @@
                 </select>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-2">
+        <div class="grid_9">
+            <div class="grid_2 alpha">
                 <label class="<?php echo $check; ?>">Salutation</label>
                 <select name="acc_salut" class="form-control">
                 <?php
@@ -69,17 +69,17 @@
                 ?>
                 </select>
             </div>
-            <div class="col-md-5">
+            <div class="grid_4">
                 <label class="<?php echo $check; ?>">First Name<label class="error rem-bor" for="acc_fname" generated="true"></label></label>
                 <input type="text" name="acc_fname" class="form-control" placeholder="First Name" value="<?php echo $fname; ?>">
             </div>
-            <div class="col-md-5">
+            <div class="grid_3 omega">
                 <label class="<?php echo $check; ?>">Last Name<label class="error rem-bor" for="acc_lname" generated="true"></label></label>
                 <input type="text" name="acc_lname" class="form-control" placeholder="Last Name" value="<?php echo $lname; ?>">
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-5">
+        <div class="grid_9">
+            <div class="grid_8 alpha">
                 <label class="<?php echo $check; ?>">Title</label>
                 <select name="acc_title" class="form-control">
                 <?php
@@ -113,47 +113,47 @@
             </div>
         </div>
         <br/>
-        <div class="row">
-            <div class="col-md-4">
+        <div class="grid_9">
+            <div class="grid_3 alpha">
                 <label class="<?php echo $check; ?>">Primary Phone<label class="error rem-bor" for="acc_phone" generated="true"></label></label>
                 <input type="text" name="acc_phone" class="form-control" placeholder="Primary Phone" value="<?php echo $phone; ?>">
             </div>
-            <div class="col-md-4">
+            <div class="grid_3">
                 <label class="<?php echo $check; ?>">Alternate Phone<label class="error rem-bor" for="acc_alter_phone" generated="true"></label></label>
                 <input type="text" name="acc_alter_phone" class="form-control" placeholder="Alternate Phone" value="<?php echo $alt_phone; ?>">
             </div>
-            <div class="col-md-4">
+            <div class="grid_3 omega">
                 <label class="<?php echo $check; ?>">Mobile Phone<label class="error rem-bor" for="acc_mobile_phone" generated="true"></label></label>
                 <input type="text" name="acc_mobile_phone" class="form-control" placeholder="Mobile Phone" value="<?php echo $mobile; ?>">
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
+        <div class="grid_9">
+            <div class="grid_5 alpha">
                 <label class="<?php echo $check; ?>">Primary Email<label class="error rem-bor" for="acc_email" generated="true"></label></label>
                 <input type="text" name="acc_email" class="form-control" placeholder="Primary Email" value="<?php echo $email; ?>">
             </div>
-            <div class="col-md-6">
+            <div class="grid_4 omega">
                 <label class="<?php echo $check; ?>">Alternate Email<label class="error rem-bor" for="acc_alter_email" generated="true"></label></label>
                 <input type="text" name="acc_alter_email" class="form-control" placeholder="Alternate Email" value="<?php echo $alt_email; ?>">
             </div>
         </div>
         <br/>
-        <div class="row">
-            <div class="col-md-6">
+        <div class="grid_9">
+            <div class="grid_5 alpha">
                 <label class="<?php echo $check; ?>">Billing Address 1<label class="error rem-bor" for="acc_bill_add_1" generated="true"></label></label>
                 <input type="text" name="acc_bill_add_1" class="form-control" placeholder="Billing Address 1" value="<?php echo $bill_address; ?>">
             </div>
-            <div class="col-md-6">
+            <div class="grid_4 omega">
                 <label class="<?php echo $check; ?>">Billing Address 2<label class="error rem-bor" for="acc_bill_add_2" generated="true"></label></label>
                 <input type="text" name="acc_bill_add_2" class="form-control" placeholder="Billing Address 2" value="<?php echo $bill_address_2; ?>">
             </div>
         </div>
-        <div class="row">
-             <div class="col-md-5">
+        <div class="grid_9">
+             <div class="grid_3 alpha">
                 <label class="<?php echo $check; ?>">Billing City<label class="error rem-bor" for="acc_bill_city" generated="true"></label></label>
                 <input type="text" name="acc_bill_city" class="form-control" placeholder="Billing City" value="<?php echo $bill_city; ?>">
             </div>
-            <div class="col-md-3">
+            <div class="grid_3">
                 <label class="<?php echo $check; ?>">Office State<label class="error rem-bor" for="acc_bill_state" generated="true"></label></label>
                 <select class="form-control" name="acc_bill_state">
                 <?php if(isset($_GET['id'])) {
@@ -219,24 +219,24 @@
                 } ?>
                 </select>
             </div>
-            <div class="col-md-4">
+            <div class="grid_3 omega">
                 <label class="<?php echo $check; ?>">Postal Code<label class="error rem-bor" for="acc_bill_zip" generated="true"></label></label>
                 <input type="text" name="acc_bill_zip" class="form-control" placeholder="Postal Code" value="<?php echo $bill_zip; ?>">
             </div>
         </div>
         <br/>
-        <div class="row">
-            <div class="col-md-6">
+        <div class="grid_9">
+            <div class="grid_5 alpha">
                 <label class="<?php echo $check; ?>">Sales Center<label class="error rem-bor" for="acc_sales_center" generated="true"></label></label>
                 <input type="text" name="acc_sales_center" class="form-control" placeholder="Sales Center" value="<?php echo $sales_center; ?>" readonly>
             </div>
-            <div class="col-md-6">
+            <div class="grid_4 omega">
                 <label class="<?php echo $check; ?>">Sales Agent<label class="error rem-bor" for="acc_sales_agent" generated="true"></label></label>
                 <input type="text" name="acc_sales_agent" class="form-control" placeholder="Sales Agent" value="<?php echo $sales_agent; ?>" readonly>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
+        <div class="grid_9">
+            <div class="grid_3 alpha">
                 <label class="<?php echo $check; ?>">Product<label class="error rem-bor" for="acc_product" generated="true"></label></label>
                 <select class="form-control" name="acc_product">
                     <?php
@@ -261,7 +261,7 @@
                     ?>
                 </select>
             </div>
-            <div class="col-md-4">
+            <div class="grid_3">
                 <label class="<?php echo $check; ?>">Component<label class="error rem-bor" for="acc_component" generated="true"></label></label>
                 <select class="form-control" name="acc_component">
                     <?php
@@ -290,7 +290,7 @@
                     ?>  
                 </select>
             </div>
-            <div class="col-md-4">
+            <div class="grid_3 omega">
                 <label class="<?php echo $check; ?>">Coupon<label class="error rem-bor" for="acc_coupon" generated="true"></label></label>
                 <select class="form-control" name="acc_coupon">
                     <?php
@@ -319,8 +319,8 @@
             </div>
         </div>
         <?php if(isset($_GET['id'])) { ?>
-        <div class="row">
-            <div class="col-md-1 col-md-offset-5 col-sm-1 col-sm-offset-5 col-xs-1 col-xs-offset-4">
+        <div class="grid_9">
+            <div class="grid_2 push_4 alpha">
                 <button class="btn btn-danger" type="submit" name="upd_acc">Update</button>
             </div>
         </div>

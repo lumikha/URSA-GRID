@@ -115,19 +115,6 @@ button
     color: #ff0000;
   }
 
-.tab-pane
-{
-     width:105%;
-    overflow:auto;
-    overflow-x:hidden;
-    height:450px;
-    margin-bottom: 1em;
-    padding-top: 3em;
-   
-    padding-right: 1em;
- 
-
-}
 
 .dropdown-menu
 {
@@ -170,6 +157,20 @@ button
 
 .tab-content
 {
-    border: 1px solid black;
-    padding:2em;
+    
+    
+}
+
+.tab-pane
+{
+     width:105%;
+    overflow:auto;
+    overflow-x:hidden;
+    height:450px;
+    margin-bottom: 1em;
+    padding-top: 3em;
+   
+    padding-right: 1em;
+ 
+
 }

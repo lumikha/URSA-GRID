@@ -39,7 +39,7 @@
     <body>
 
 <div class="full-width-div">
-    <div class="container_12 ">
+    <div class="container_12" style="margin-top:60px;">
 
                             <div class="grid_2 alpha text-center">
                                 <a id="home" href="summary">
@@ -64,7 +64,7 @@
                                         </div>
                                     </div>
                                     <?php if(!isset($_SESSION['user_now_db_customer_id'])) { ?>
-                                    <div class="grid_2 push_6 omega">
+                                    <div class="grid_2 push_6 omega" style="margin-left:3em;">
                                         <div ng-app="myapp" id="search_result_view" >
                                             <div ng-controller="newController">
                                                 <div id="toggleContainer" style=" position:relative">

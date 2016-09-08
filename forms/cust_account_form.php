@@ -1,7 +1,7 @@
 <div class="tab-pane fade" id="account">
 <form  action="" method="POST" id="cust_account_form">
-        <div class="row" style="margin-top:-35px;">
-            <div class="col-md-6">
+        <div class="grid_9" style="margin-top:-35px;">
+            <div class="grid_9">
                 <label class="<?php echo $check; ?>">Business Name<label class="error rem-bor" for="acc_b_name" generated="true"></label></label>
                 <input type="text" name="acc_b_name" class="form-control" placeholder="Business Name" value="<?php echo $business_name; ?>">
             </div>

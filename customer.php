@@ -29,7 +29,7 @@
 
     <div class="container_12">    
     <div class="grid_12 omega">
-    <div id="boxes" class="row text-center" style="display:none;">
+    <div id="boxes" class="text-center" style="display:none; position:relative;">
         <div class="cust_id grid_2" style="padding: 1em;margin-right:3em;margin-left:0em;margin-bottom:1em;border:solid black 2px;"><strong><?php echo $billing_sum; ?></strong></div>
         <div class="grid_2" style="padding: 1em;margin-right:2em;margin-bottom:1em;border:solid black 2px;"><strong><?php echo "TalkDesk"; ?></strong></div>
         <div class="grid_2" style="padding: 1em;margin-right:3em;margin-bottom:1em;border:solid black 2px;height:52px;overflow:hidden;"><div id="email_box" style="width: 100%;height: 300%;overflow:auto;"><strong><?php echo $email; ?></strong></div></div>
@@ -37,9 +37,9 @@
         <div class="grid_2" style="padding: 1em;margin-right:1em;margin-bottom:1em;border:solid #340570 2px;color:#340570"><strong>Disposition</strong></div>
 
     </div></div>
-    <div class="full-width-div">
-        <div class="grid_10" style="padding: 1em;">
-
+    
+        <div class="container_12" style="padding: 1em;">
+         <div class="grid_9 alpha">
     <div class="tab-content">
 
         <?php 
@@ -85,7 +85,7 @@
     }
 ?>
                                     
-                    <div class="grid_2" style="font-size:83%;color:gray;margin-right:0px; margin-left:6em; margin-top:1.5em;height:450px; overflow:auto;">
+                    <div class="grid_2 omega" style="font-size:83%;color:gray;margin-right:0px; margin-left:6em; margin-top:1.5em;height:450px; overflow:auto;">
                     <?php
                     if(isset($_GET['id'])) {
                         $touch_cnt = 0;

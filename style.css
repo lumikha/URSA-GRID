@@ -122,7 +122,10 @@ button
     overflow-x:hidden;
     height:450px;
     margin-bottom: 1em;
-    padding-top: 2em;
+    padding-top: 3em;
+   
+    padding-right: 1em;
+ 
 
 }
 
@@ -156,4 +159,17 @@ button
     padding:0;
     min-width: 960px;
     max-width:1600px;
+}
+
+#boxes
+{
+    margin-top:-55px;
+    margin-left: 
+
+}
+
+.tab-content
+{
+    border: 1px solid black;
+    padding:2em;
 }

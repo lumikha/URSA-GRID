@@ -48,7 +48,7 @@
                             </div>
                         
                                     <div class="grid_3">
-                                         <div class="user_opt dropdown"> 
+                                         <div class="user_opt dropdown" style="margin-left:2em;"> 
                                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                              <p class="hello">Hey <?php echo @$fname; ?>
                                                 <span class="caret"></span>
@@ -64,7 +64,7 @@
                                         </div>
                                     </div>
                                     <?php if(!isset($_SESSION['user_now_db_customer_id'])) { ?>
-                                    <div class="grid_2 push_5 omega">
+                                    <div class="grid_2 push_6 omega">
                                         <div ng-app="myapp" id="search_result_view" >
                                             <div ng-controller="newController">
                                                 <div id="toggleContainer" style=" position:relative">
@@ -91,9 +91,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="full-width-div">
                        
-                            <div class="grid_2" style="margin-bottom:90px; margin-top:20px;">
+                       <div class="full-width-div">
+
+                        <div class="container_12">
+                       
+                            <div class="grid_2 alpha" style="margin-bottom:90px; margin-top:20px; position:absolute;">
                                     <?php 
                                     if(isset($_SESSION['user_now_db_customer_id'])) { ?>
                                     <ul class="nav nav-pills nav-stacked text-center" id="myTab">
@@ -132,4 +135,4 @@
                                 <?php }?>
                              </div>
                              </div>
-                            
+                            </div>

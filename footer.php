@@ -3,6 +3,7 @@
 </html>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
 <script type="text/javascript" src="js/jquery.validate.js"></script>
 <script src="js/dataTables/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -14,6 +15,8 @@
 <?php if(basename($_SERVER['PHP_SELF']) == "customer.php") { ?>
 <script type="text/javascript">
       $(document).ready(function(){
+        checkIfCancel();
+        
         document.getElementById('search_result_view').style.display = "none";
         var lastTab = $.cookie('last_tab');
         if(lastTab != "#admin"){
@@ -48,6 +51,20 @@
 			alert("Changed a tag: " + tag);
 		}
 
+    function checkIfCancel() {
+        if(document.getElementById("cancel_no").checked == true) {
+            cancelNo();
+        }
+    }
+
+    function cancelYes() {
+        $('#cancel_reason').prop('disabled', false);
+    }
+
+    function cancelNo() {
+        $('#cancel_reason').prop('disabled', true);
+    }
+
 		$(function() {
 
 			$('#k-words').tagsInput({width:'auto'});
@@ -55,6 +72,30 @@
 		});
 
 </script>
+<!--js for shrinking text and div-->
+
+<script>
+$( '.box' ).each(function ( i, box ) {
+
+   var width = $( box ).width(),
+       html = '<span style="white-space:nowrap">',
+       line = $( box ).wrapInner( html ).children()[ 0 ],
+       n = 100;
+   
+   $( box ).css( 'font-size', n );
+
+   while ( $( line ).width() > width ) {
+       $( box ).css( 'font-size', --n );
+   }
+
+   $( box ).text( $( line ).text() );
+
+});
+
+</script>
+
+<!--draggable scrollbar-->
+
 
 <script type="text/javascript">
     $(function() { 
@@ -111,6 +152,114 @@
           form.submit();
         }
       });
+
+      $("#noid_cust_account_form").validate({
+        ignore: "",
+        rules: {
+            cID: { 
+                required: true 
+            }
+        },
+        messages: {
+            cID: {
+                required: false
+            }
+        },
+        focusInvalid: false,
+        errorPlacement: function(){
+           return false;
+        },
+        submitHandler: function(form) {
+            form.submit();
+        },
+        showErrors: function(errorMap, errorList) {
+            $(".form-errors").html("No customer selected");
+        }
+    });
+
+    $("#cust_account_form").validate({
+        rules: {
+            acc_b_name: { 
+                required:true 
+            },
+            acc_fname: { 
+                required:true 
+            },
+            acc_lname: { 
+                required:true 
+            },
+            acc_phone: {
+                required:true
+            },
+            acc_email: {
+                required:true
+            },
+            acc_bill_add_1: {
+                required:true
+            },
+            acc_bill_city: {
+                required:true
+            },
+            acc_bill_state: {
+                required:true
+            },
+            acc_bill_zip: {
+                required:true
+            }
+        },
+        messages: {
+            acc_b_name: "*",
+            acc_fname: "*",
+            acc_lname: "*",
+            acc_phone: "*",
+            acc_email: "*",
+            acc_bill_add_1: "*",
+            acc_bill_city: "*",
+            acc_bill_state: "*",
+            acc_bill_zip: "*"
+        },
+        focusInvalid: false,
+        invalidHandler: function() {
+            $(this).find(":input.error:first").focus();
+        },
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+    
+    $("#cust_provisioning_form").validate({
+        rules: {
+            bname: { 
+                required:true 
+            },
+            b_email: { 
+                required:true 
+            }
+        },
+        messages: {
+            bname: "*",
+            b_email: "*"
+        },
+        focusInvalid: false,
+        invalidHandler: function() {
+            $(this).find(":input.error:first").focus();
+        },
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
+
+     $("#email_box").mousewheel(function(event, delta) {
+
+        this.scrollLeft -= (delta * 30);
+      
+        event.preventDefault();
+
+     });
+
+
+
     });
 
     $(document).ready(function () {

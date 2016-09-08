@@ -65,7 +65,7 @@
 					$_SESSION['type'] = "admin";
 					?>
 					<script>
-						window.location = "customer"; 
+						window.location = "summary"; 
 					</script>
 					<?php
 				} else {
@@ -74,7 +74,7 @@
 					$_SESSION['type'] = "agent";
 					?>
 					<script>
-						window.location = "customer"; //Admin/Agent Dashboard
+						window.location = "summary"; //Admin/Agent Dashboard
 					</script>
 					<?php
 				}

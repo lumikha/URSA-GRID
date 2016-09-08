@@ -1,11 +1,10 @@
-.container {
-    padding-top:2em;
-    width: 80%;
-}
 
 .form-control{
     margin-bottom: .5em;
+
 }
+
+
 
 @media (min-width: 1024px) {
     .container-full {
@@ -20,7 +19,7 @@
 
 .user_opt .btn {
     margin-top: 6px;
-    margin-left: 4px;
+    margin-left: -15px;
     padding: 0px 0px 0px 0px;
     background-color: transparent;
     border-color: transparent;
@@ -110,10 +109,51 @@ button
 }
 .disabledTab {
     pointer-events: none;
-    opacity: 0.6;
 }
 
 .error {
     color: #ff0000;
-    margin-top: -5px;
   }
+
+.tab-pane
+{
+     width:105%;
+    overflow:auto;
+    overflow-x:hidden;
+    height:450px;
+    margin-bottom: 1em;
+    padding-top: 2em;
+
+}
+
+.dropdown-menu
+{
+    margin-left:-15px;
+
+}
+
+.alert
+{
+    border: 1px solid black;
+    height:100px;
+}
+
+.dynamic
+{
+    border: 1px solid black;
+    height:180px;
+    margin-left:1em;
+    align-content: center;
+}
+
+/*960gs additional css codes*/
+
+.full-width-div
+{
+    width:100%;
+    border:0;
+    margin:0;
+    padding:0;
+    min-width: 960px;
+    max-width:1600px;
+}

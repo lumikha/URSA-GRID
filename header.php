@@ -23,31 +23,34 @@
         <title>URSA</title>
         <link rel="Shortcut icon" href="img/ursa_tab_logo.png"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href="js/dataTables/dataTables.bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" type="text/css" href="css/jquery.tagsinput.css" />
+
+    <!--960 grid stylesheet links-->
+
+    <link href="css/960.css" rel="stylesheet"/>
+    <link href="css/reset.css" rel="stylesheet"/>
+    <link href="css/text.css" rel="stylesheet"/>
+
+  </head>
     <body>
 
+<div class="full-width-div">
+    <div class="container_12 ">
 
-    <div class="container-fluid" style="padding:5em;margin-top:-5em">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-2 text-center">
-                                <a id="home" href="customer.php">
-                                    <img src="img/ursa_logo.png" height="130" align="middle">
+                            <div class="grid_2 alpha text-center">
+                                <a id="home" href="summary">
+                                    <img src="img/ursa_logo_red.gif" height="130" align="middle">
                                 </a>
                             </div>
-                            <div class="col-md-10">
-                                <div class="row">
-                                    <div class="col-md-3">
+                        
+                                    <div class="grid_3">
                                          <div class="user_opt dropdown"> 
                                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                             <p class="hello">Hey <?php echo $fname; ?>
+                                             <p class="hello">Hey <?php echo @$fname; ?>
                                                 <span class="caret"></span>
                                             </p>
                                             </button>
@@ -61,7 +64,7 @@
                                         </div>
                                     </div>
                                     <?php if(!isset($_SESSION['user_now_db_customer_id'])) { ?>
-                                    <div class="col-md-4 col-md-offset-5">
+                                    <div class="grid_2 push_5 omega">
                                         <div ng-app="myapp" id="search_result_view" >
                                             <div ng-controller="newController">
                                                 <div id="toggleContainer" style=" position:relative">
@@ -70,11 +73,11 @@
                                                     </form>
                                                     <div name="output" id="output" style="position:absolute; z-index:1;width: 100%;" ng-cloak >
                                                         <div class="list-group">
-                                                            <a class="list-group-item" ng-if="search" ng-repeat="user in result = ( users | filter:search | limitTo:num)" href="?id={{ user.chargify_id }}">
+                                                            <a class="list-group-item" ng-if="search" ng-repeat="user in result = ( users | filter:search | limitTo:num)" href="customer.php?id={{ user.chargify_id }}">
                                                                 <span style="font-size:130%" class="text-info"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> {{user.business_name}}</span><br>
                                                                 <span style="font-size:75%"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{user.customer_first_name}} {{user.customer_last_name}}, 
                                                                     <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>  {{user.business_email}}
-                                                                    </span>
+                                                                </span>
                                                             </a>
                                                             <a class="list-group-item" ng-if="search" ng-hide="result.length">Opps, No Results Found ...</a>
                                                             <a class="list-group-item text-right" ng-if="search" href="#" onclick="getSearch();">View More Results <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>    
@@ -88,8 +91,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-2" style="margin-bottom:90px;">
+                        <div class="full-width-div">
+                       
+                            <div class="grid_2" style="margin-bottom:90px; margin-top:20px;">
                                     <?php 
                                     if(isset($_SESSION['user_now_db_customer_id'])) { ?>
                                     <ul class="nav nav-pills nav-stacked text-center" id="myTab">
@@ -98,14 +102,34 @@
                                      </ul>
                                     <?php }else { ?>
                                     <ul class="nav nav-pills nav-stacked text-center" id="myTab">
+                                    <?php  if($current_page=="summary.php") { ?>
+                                    <li><a id="btn_account" class="nl disabledTab hidden" data-toggle="tab">Hidden</a></li>
+                                    <li><a id="btn_account" class="nl disabledTab" data-toggle="tab">Account</a></li>
+                                    <li><a id="btn_provisioning" class="nl disabledTab" data-toggle="tab" >Provisioning</a></li>
+                                    <li><a id="btn_support" class="nl disabledTab" data-toggle="tab" >Support</a></li>
+                                    <li><a id="btn_customer" class="nl disabledTab" data-toggle="tab" >Customer</a></li>
+                                    <li><a id="btn_quality" class="nl disabledTab" data-toggle="tab" >Quality</a></li>
+                                    <li><a id="btn_dashboard" class="nl disabledTab" data-toggle="tab" >Dashboard</a></li>
+                                    <li><a id="btn_center" class="nl disabledTab" data-toggle="tab" >Center</a></li>
+                                    <?php } ?>
+                                    <?php  if($current_page=="customer.php") { ?>
                                     <li><a id="btn_account" class="nl" href="#account" data-toggle="tab">Account</a></li>
-                                    <li><a id="btn_provisioning" class="nl" href="#provisioning" data-toggle="tab">Provisioning</a></li>
-                                    <li><a id="btn_support" class="nl" href="#support" data-toggle="tab">Support</a></li>
-                                    <li><a id="btn_customer" class="nl" href="#customer" data-toggle="tab">Customer</a></li>
-                                    <li><a id="btn_quality" class="nl" href="#quality" data-toggle="tab">Quality</a></li>
-                                    <li><a id="btn_dashboard" class="nl" href="#dashboard" data-toggle="tab">Dashboard</a></li>
-                                    <li><a id="btn_center" class="nl" href="#center" data-toggle="tab">Center</a></li>
-                                    <li><a id="btn_admin" href="#admin" data-toggle="tab" class="nl <?php if($_SESSION['type'] == 'agent'): ?> hidden <?php endif;?>">Admin</a></li>
+                                    <li><a id="btn_provisioning" class="nl" href="#provisioning" data-toggle="tab" >Provisioning</a></li>
+                                    <li><a id="btn_support" class="nl" href="#support" data-toggle="tab" >Support</a></li>
+                                    <li><a id="btn_customer" class="nl" href="#customer" data-toggle="tab" >Customer</a></li>
+                                    <li><a id="btn_quality" class="nl" href="#quality" data-toggle="tab" >Quality</a></li>
+                                    <li><a id="btn_dashboard" class="nl" href="#dashboard" data-toggle="tab" >Dashboard</a></li>
+                                    <li><a id="btn_center" class="nl" href="#center" data-toggle="tab" >Center</a></li>
+                                    <li><a id="btn_admin" href="#admin" data-toggle="tab" class="nl <?php if($_SESSION['type'] == 'agent'): ?> hidden <?php endif;?>" >Admin</a></li>
+                                    <?php } ?>
                                 </ul>
+                                    <?php if($current_page == "customer.php") { ?>
+                                     <div class="row">
+                                        <div class="col-md-6 dynamic" hidden>
+                                     </div>    
+                                </div>
+                                    <?php } ?>
                                 <?php }?>
                              </div>
+                             </div>
+                            

@@ -29,7 +29,7 @@
 
     <div class="container_12">    
     <div class="grid_12 omega">
-    <div id="boxes" class="text-center" style="display:none; position:relative;">
+    <div id="boxes" class="text-center" style="display:none; position:absolute;">
         <div class="cust_id grid_2" style="padding: 1em;margin-right:3em;margin-left:0em;margin-bottom:1em;border:solid black 2px;"><strong><?php echo $billing_sum; ?></strong></div>
         <div class="grid_2" style="padding: 1em;margin-right:2em;margin-bottom:1em;border:solid black 2px;"><strong><?php echo "TalkDesk"; ?></strong></div>
         <div class="grid_2" style="padding: 1em;margin-right:3em;margin-bottom:1em;border:solid black 2px;height:52px;overflow:hidden;"><div id="email_box" style="width: 100%;height: 300%;overflow:auto;"><strong><?php echo $email; ?></strong></div></div>

@@ -127,7 +127,7 @@ if(isset($_POST['new_thread'])) {
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->     
 
-  <style>
+  <style> 
     .modal.fade .modal-dialog {
         -webkit-transform: scale(0.1);
         -moz-transform: scale(0.1);

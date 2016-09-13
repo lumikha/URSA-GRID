@@ -330,8 +330,8 @@
     <?php if(!isset($_GET['id'])) { ?>
         <form  action="" method="POST" id="noid_cust_account_form">
             <input type="text" name="cID" value="" hidden>
-            <div class="row">
-                <div class="col-md-1 col-md-offset-5 col-sm-1 col-sm-offset-5 col-xs-1 col-xs-offset-4">
+            <div class="grid_9">
+                <div class="grid_2 push_4 alpha">
                     <button class="btn btn-danger" type="submit">Update</button>
                 </div>
             </div>

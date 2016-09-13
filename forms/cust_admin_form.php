@@ -1,22 +1,22 @@
 <div class="tab-pane fade" id="admin">            
-        <div class="row">
+        <div class="container_12">
         <form method="POST" name="add_user">
-            <div class="row">
-                <div class="col-md-4">
+            <div class="grid_9">
+                <div class="grid_3 alpha">
                     <input style="float:left" type="text" class="form-control" placeholder="First Name" name="fname" value="<?php if(@$_GET['action']=='edit'){ echo $user_fname; }?>">
                 </div>
-                <div class="col-md-4">
+                <div class="grid_3">
                     <input type="text" class="form-control" placeholder="Last Name" name="lname" value="<?php if(@$_GET['action']=='edit'){ echo $user_lname; }?>">
                 </div>
-                <div class="col-md-4">
+                <div class="grid_3 omega">
                     <input type="text" class="form-control" placeholder="Email" name="email" value="<?php if(@$_GET['action']=='edit'){ echo $user_email; }?>">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4">
+            <div class="grid_9">
+                <div class="grid_4 alpha">
                     <input type="password" class="form-control" placeholder="Password" name="pass" required>
                 </div>
-                <div class="col-md-6">
+                <div class="grid_4">
                     <select name="type" class="form-control">
                         <option <?php if(@$userType=="Customer Service Agent"){ echo "selected"; } ?>>
                             Customer Service Agent
@@ -41,14 +41,14 @@
                         </option>
                     <select>
                 </div>
-                <div class="col-md-2">
+                <div class="grid_1 omega">
                     <input type="submit" class="btn btn-primary" value="<?php if(@$_GET['action']=='edit'){ echo 'Update'; } else { echo 'Add'; }?>" name="submit_user">
                 </div>
             </div> 
         </form>
         </div>
         <br/><br/>
-        <div class="row">
+        <div class="grid_9">
             <table class="table" id="users">
             <thead>
             <tr>

@@ -65,8 +65,10 @@ if(isset($_POST['new_thread'])) {
         
         <div class="modal-body">
             <form method="POST">
-            <div class="row">
-                <div class="col-md-6">
+
+            <div class="container_12">
+
+                <div class="grid_6 alpha">
                     <label>Customer</label>
                     <select class="form-control" name="ticket_customer" placeholder="Product">
                         <?php
@@ -81,7 +83,7 @@ if(isset($_POST['new_thread'])) {
                         ?>
                     </select>
                 </div>
-                <div class="col-md-6">
+                <div class="grid_6 omega>
                     <label>Assigned To</label>
                     <select class="form-control" name="tiket_assigned" placeholder="Product" disabled>
                         <option></option>
@@ -158,40 +160,40 @@ if(isset($_POST['new_thread'])) {
                 <div class="modal-body">
                     <!--<form method="POST">-->
                         <input type="type" id="cID" hidden>
-                        <div class="row">
-                            <div class="col-md-6">
+                        <div class="grid_9">
+                            <div class="grid_4 alpha">
                                 <label>Ticket ID</label>
                                 <input type="text" class="form-control" id="tID" value="" style="text-align: center; font-weight: bold;" readonly>
                             </div>
-                            <div class="col-md-1">
+                            <div class="grid_1">
                                 &nbsp;
                             </div>
-                            <div class="col-md-4">
+                            <div class="grid_4 omega">
                                 <label>Ticket Entry No.</label>
                                 <input type="text" class="form-control" id="tNo" value="" style="text-align: center;" readonly>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
+                        <div class="grid_9">
+                            <div class="grid_9 alpha">
                                 <label>Subject</label>
                                 <input type="text" class="form-control" id="tSubj" name="ticket_subject" readonly>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
+                        <div class="grid_9">
+                            <div class="grid_9 alpha">
                                 <label>Message</label>
                                 <div dir="ltr" class="form-control" readonly style="overflow:auto;height:300px;">
                                     <span id="tMsg" name="ticket_subject" style="height: auto;" readonly></span>
                                 </div>
                             </div>
                        </div>
-                        <div class="row">
+                        <div class="grid_9">
                             <center>
                                 <a href="#" class="btn btn-danger open-modal-updTicket">Update Ticket</a>
                                 <button class="btn btn-danger" onclick="gotoCustomerPage()">Go to Customer Page</button>
                             </center>
                         </div>
-                        <div class="row">
+                        <div class="grid_9">
                             <style>
                                 #magic_buttons button {
                                     background-color: #e6e6e6;
@@ -210,10 +212,10 @@ if(isset($_POST['new_thread'])) {
                                     padding: 5px;
                                 }
                             </style>
-                            <label class="col-md-12">Thread(s)</label>
-                            <div id="lbl_th" class="col-md-12">
+                            <label class="grid_9">Thread(s)</label>
+                            <div id="lbl_th" class="grid_9 alpha">
                             </div>
-                            <div id="magic_buttons" class="col-md-12">
+                            <div id="magic_buttons" class="grid_9 omega">
                             </div>
                         </div>
                     <!--</form>-->
@@ -230,15 +232,15 @@ if(isset($_POST['new_thread'])) {
                 <div class="modal-body">
                     <form method="POST">
                         <input type="type" id="cID_new_thread" name="cTID" hidden>
-                        <div class="row">
-                            <div class="col-md-6">
+                        <div class="grid_9">
+                            <div class="grid_4 alpha">
                                 <label>New Thread Type</label>
                                 <div class="radio" style="margin-left: 30px;">
                                     <label><input type="radio" name="type" value="note" onchange="tNote();">Note</label>&nbsp;&nbsp;&nbsp;&nbsp;
                                     <label><input type="radio" name="type" value="message" onchange="tMsg();">Message</label>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="grid_4 omega">
                                 <label>New Status</label>
                                 <select class="form-control" name="status">
                                     <optgroup label="Status">
@@ -252,19 +254,19 @@ if(isset($_POST['new_thread'])) {
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-12">
+                        <div class="grid_9">
+                            <div class="grid_9 alpha">
                                 <label>Subject</label>
                                 <input type="text" class="form-control" id="commit_subj" name="subject">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
+                        <div class="grid_9">
+                            <div class="grid_9 alpha">
                                 <label>Message</label>
                                 <textarea class="form-control" name="message" style="height: 300px;"></textarea>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="grid_9">
                             <center>
                                 <input type="Submit" class="btn btn-danger" name="new_thread" value="Create Thread">
                             </center>
@@ -276,15 +278,14 @@ if(isset($_POST['new_thread'])) {
         </div>
     </div>
 
-    <div class="col-md-10 col-sm-12" style="margin-top:-90px;">
-    <div id="boxes" class="row text-center">
-        <div class="col-lg-2 col-md-2 col-sm-5 col-xs-12 col-sm-offset-1 col-md-offset-1" style="padding: 1em;margin-right:1em;margin-bottom:1em;border:solid #A60800 2px;color:#A60800"><a href="#" onclick="return addTicket();"><strong>Ticket</strong></a></div>
-        <div class="col-lg-2 col-md-2 col-sm-5 col-xs-12" style="padding: 1em;margin-right:1em;margin-bottom:1em;border:solid #340570 2px;color:#340570"><strong>Talkdesk</strong></div>
-        <div class="row">
-        </div>
+    <div class="container_12" style="margin-top:-13px;">
+    <div id="boxes" class="row text-center" style="position:absolute;">
+        <div class="grid_2 push_3 alpha" style="padding: 1em;margin-right:1em;margin-bottom:1em;border:solid #A60800 2px;color:#A60800"><a href="#" onclick="return addTicket();"><strong>Ticket</strong></a></div>
+        <div class="grid_2 push_3 omega" style="padding: 1em;margin-right:1em;margin-bottom:1em;border:solid #340570 2px;color:#340570"><strong>Talkdesk</strong></div>
+        
     </div>
-    <div class="row">
-        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-md-offset-1" style="overflow-y: scroll; overflow-x: hidden; height: 550px;">
+    <div class="container_12">
+        <div class="grid_5 push_3" style="overflow-y: scroll; overflow-x: hidden; height: 450px; margin-top:2em;">
 
             <?php
             if($connectHS == false) {
@@ -310,11 +311,11 @@ if(isset($_POST['new_thread'])) {
                     ?>
                             
 
-                            <div class="row">
-                                <div class="col-md-1 col-xs-3 round-div">
+                            <div class="grid_9">
+                                <div class="grid_1 alpha">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 </div>
-                                <div class="col-md-5 col-xs-9">
+                                <div class="gid_4 omega">
                                     <a href="customer.php?id=<?php echo $t_ci; ?>&ticket_id=<?php echo $ticket_id; ?>" target="_blank"><strong><?php echo $t_bn; ?></strong></a> <br>
                                     <?php
                                         echo $t_fn." ".$t_ln."<br>"
@@ -394,11 +395,11 @@ if(isset($_POST['new_thread'])) {
                                     $cMsg = str_replace($sagbot, "",$convo_message);
 
                                     ?>
-                                        <div class="row">
-                                            <div class="col-md-1 col-xs-3 round-div">
+                                        <div class="grid_9">
+                                            <div class="grid_1 alpha">
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             </div>
-                                            <div class="col-md-5 col-xs-9">
+                                            <div class="grid_4 omega">
                                                 <?php if($not_found == 0) { ?>
     <a href="#" class="open-modal" data-cid="<?=$t_cust_id?>" data-id="<?=$convo_id?>" data-no="<?=$convo_number?>" data-subject="<?=$convo_email_subject?>" data-mes="<?=$cMsg?>" data-threadmsg="<?=$th_arr_fin?>">
                                                 <strong><?php echo $t_bname; ?></strong></a> <br>

@@ -160,7 +160,7 @@ button
 .tab-content
 {
  margin-left: 0px;   
-    
+
 }
 
 .tab-pane
@@ -171,7 +171,17 @@ button
     height:450px;
     margin-bottom: 1em;
     padding-top: 3em;
-    padding-right: 1em;
- 
 
+}
+
+.ticke-pane
+{
+    font-size:83%;
+    color:gray;
+    margin-right:0px;
+    margin-left:3em;
+    margin-top:0;
+    height:450px;
+    overflow:auto;
+    padding-right: 2.5em;
 }

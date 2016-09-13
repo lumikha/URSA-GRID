@@ -85,7 +85,7 @@
     }
 ?>
                                     
-                    <div class="grid_2 push_2 omega" style="font-size:83%;color:gray;margin-right:0px; margin-left:3em; margin-top:0;height:450px; overflow:auto;">
+                    <div class="grid_2 push_2 omega ticket-pane" >
                     <?php
                     if(isset($_GET['id'])) {
                         $touch_cnt = 0;

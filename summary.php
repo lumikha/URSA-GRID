@@ -65,10 +65,8 @@ if(isset($_POST['new_thread'])) {
         
         <div class="modal-body">
             <form method="POST">
-
-            <div class="container_12">
-
-                <div class="grid_6 alpha">
+            <div class="row">
+                <div class="col-md-6">
                     <label>Customer</label>
                     <select class="form-control" name="ticket_customer" placeholder="Product">
                         <?php
@@ -83,7 +81,7 @@ if(isset($_POST['new_thread'])) {
                         ?>
                     </select>
                 </div>
-                <div class="grid_6 omega>
+                <div class="col-md-6">
                     <label>Assigned To</label>
                     <select class="form-control" name="tiket_assigned" placeholder="Product" disabled>
                         <option></option>
@@ -105,19 +103,19 @@ if(isset($_POST['new_thread'])) {
                     </select>
                 </div>
             </div>
-            <div class="container_12 alpha">
-                <div class="grid_10 alpha">
+            <div class="row">
+                <div class="col-md-12">
                     <label>Subject</label>
                     <input type="text" class="form-control" name="ticket_subject" disabled>
                 </div>
             </div>
-            <div class="container_12">
-                <div class="grid_10">
+            <div class="row">
+                <div class="col-md-12">
                     <label>Note</label>
                     <textarea class="form-control" style="resize:vertical" name="ticket_note" disabled></textarea>
                 </div>
             </div>
-            <div class="container_12 omega">
+            <div class="row">
                 <center>
                     <input type="Submit" class="btn btn-danger" name="ticket_save" value="Submit">
                 </center>
@@ -129,7 +127,7 @@ if(isset($_POST['new_thread'])) {
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->     
 
-  <style> 
+  <style>
     .modal.fade .modal-dialog {
         -webkit-transform: scale(0.1);
         -moz-transform: scale(0.1);
@@ -151,6 +149,10 @@ if(isset($_POST['new_thread'])) {
         transform: translate3d(0, -300px, 0);
         opacity: 1;
     }
+
+    input[readonly], span[readonly] {
+        background-color: #fff !important;
+    }
   </style>
 
     <div class="modal fade" id="viewTicket" tabindex="-1" role="dialog">
@@ -160,40 +162,40 @@ if(isset($_POST['new_thread'])) {
                 <div class="modal-body">
                     <!--<form method="POST">-->
                         <input type="type" id="cID" hidden>
-                        <div class="grid_9">
-                            <div class="grid_4 alpha">
-                                <label>Ticket ID</label>
-                                <input type="text" class="form-control" id="tID" value="" style="text-align: center; font-weight: bold;" readonly>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label style="display: none;">Ticket ID</label>
+                                <input type="text" class="form-control" id="tID" value="" style="text-align: center; font-weight: bold; display: none;" readonly>
                             </div>
-                            <div class="grid_1">
+                            <div class="col-md-2">
                                 &nbsp;
                             </div>
-                            <div class="grid_4 omega">
+                            <div class="col-md-4">
                                 <label>Ticket Entry No.</label>
-                                <input type="text" class="form-control" id="tNo" value="" style="text-align: center;" readonly>
+                                <input type="text" class="form-control" id="tNo" value="" style="text-align: center; font-weight: bold;" readonly>
                             </div>
                         </div>
-                        <div class="grid_9">
-                            <div class="grid_9 alpha">
+                        <div class="row">
+                            <div class="col-md-12">
                                 <label>Subject</label>
                                 <input type="text" class="form-control" id="tSubj" name="ticket_subject" readonly>
                             </div>
                         </div>
-                        <div class="grid_9">
-                            <div class="grid_9 alpha">
+                        <div class="row">
+                            <div class="col-md-12">
                                 <label>Message</label>
-                                <div dir="ltr" class="form-control" readonly style="overflow:auto;height:300px;">
+                                <div dir="ltr" class="form-control" readonly style="overflow:auto;height:300px; background-color: #fff;">
                                     <span id="tMsg" name="ticket_subject" style="height: auto;" readonly></span>
                                 </div>
                             </div>
                        </div>
-                        <div class="grid_9">
+                        <div class="row">
                             <center>
                                 <a href="#" class="btn btn-danger open-modal-updTicket">Update Ticket</a>
                                 <button class="btn btn-danger" onclick="gotoCustomerPage()">Go to Customer Page</button>
                             </center>
                         </div>
-                        <div class="grid_9">
+                        <div class="row">
                             <style>
                                 #magic_buttons button {
                                     background-color: #e6e6e6;
@@ -212,10 +214,10 @@ if(isset($_POST['new_thread'])) {
                                     padding: 5px;
                                 }
                             </style>
-                            <label class="grid_9">Thread(s)</label>
-                            <div id="lbl_th" class="grid_9 alpha">
+                            <label class="col-md-12">Thread(s)</label>
+                            <div id="lbl_th" class="col-md-12">
                             </div>
-                            <div id="magic_buttons" class="grid_9 omega">
+                            <div id="magic_buttons" class="col-md-12">
                             </div>
                         </div>
                     <!--</form>-->
@@ -231,20 +233,20 @@ if(isset($_POST['new_thread'])) {
                                     
                 <div class="modal-body">
                     <form method="POST">
-                        <input type="type" id="cID_new_thread" name="cTID" hidden>
-                        <div class="grid_9">
-                            <div class="grid_4 alpha">
+                        <input type="type" id="cID_new_thread" name="cTID">
+                        <div class="row">
+                            <div class="col-md-6">
                                 <label>New Thread Type</label>
                                 <div class="radio" style="margin-left: 30px;">
-                                    <label><input type="radio" name="type" value="note" onchange="tNote();">Note</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <label><input type="radio" name="type" value="message" onchange="tMsg();">Message</label>
+                                    <label><input type="radio" id="rad1" name="type" value="note" onclick="tType(1);">Note</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <label><input type="radio" id="rad2" name="type" value="message" onclick="tType(2);">Message</label>
                                 </div>
                             </div>
-                            <div class="grid_4 omega">
+                            <div class="col-md-6">
                                 <label>New Status</label>
-                                <select class="form-control" name="status">
+                                <select class="form-control" id="commit_status" name="status">
                                     <optgroup label="Status">
-                                        <option disabled selected>No Change</option>
+                                        <option value="" disabled selected>No Change</option>
                                         <option value="active">Active</option>
                                         <option value="pending">Pending</option>
                                         <option value="closed">Closed</option>
@@ -254,19 +256,19 @@ if(isset($_POST['new_thread'])) {
                             </div>
                         </div>
 
-                        <div class="grid_9">
-                            <div class="grid_9 alpha">
+                        <div class="row">
+                            <div class="col-md-12">
                                 <label>Subject</label>
                                 <input type="text" class="form-control" id="commit_subj" name="subject">
                             </div>
                         </div>
-                        <div class="grid_9">
-                            <div class="grid_9 alpha">
+                        <div class="row">
+                            <div class="col-md-12">
                                 <label>Message</label>
-                                <textarea class="form-control" name="message" style="height: 300px;"></textarea>
+                                <textarea class="form-control" id="commit_msg" name="message" style="height: 300px;"></textarea>
                             </div>
                         </div>
-                        <div class="grid_9">
+                        <div class="row">
                             <center>
                                 <input type="Submit" class="btn btn-danger" name="new_thread" value="Create Thread">
                             </center>
@@ -277,6 +279,7 @@ if(isset($_POST['new_thread'])) {
             </div>
         </div>
     </div>
+
 
     <div class="container_12" style="margin-top:-13px;">
     <div id="boxes" class="row text-center" style="position:absolute;">

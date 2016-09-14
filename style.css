@@ -200,3 +200,10 @@ button
     margin-left: -1.5em;
     margin-top: -2em;
 }
+
+/*modal window located inside summary.php*/
+
+.modal-dialog
+{
+    background-color: white;
+}

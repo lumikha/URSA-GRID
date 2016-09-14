@@ -185,7 +185,28 @@ if(isset($_POST['new_thread'])) {
                             <div class="col-md-12">
                                 <label>Message</label>
                                 <div dir="ltr" class="form-control" readonly style="overflow:auto;height:300px; background-color: #fff;">
-                                    <span id="tMsg" name="ticket_subject" style="height: auto;" readonly></span>
+                                    <span id="tMsg" style="height: auto;" readonly></span>
+                                    <style>
+                                    #tMsgAtt {
+                                        
+                                    }
+                                    #tMsgAtt img {
+                                        background-image: url('img/35.gif');
+                                        background-color: #f2f2f2;
+                                        background-repeat: no-repeat;
+                                        background-size: 50px;
+                                        background-position: center; 
+                                        border: 1 solid #fff2e6;
+                                        height: 200px;
+                                        box-shadow: 9px 9px 10px #818181;
+                                        -webkit-box-shadow: 9px 9px 10px #818181;
+                                        -moz-box-shadow: 9px 9px 10px #818181;
+                                    }
+                                    #tMsgAtt img:hover {
+                                        -webkit-filter: brightness(50%);
+                                    }
+                                    </style>
+                                    <span id="tMsgAtt"></span>
                                 </div>
                             </div>
                        </div>
@@ -233,7 +254,7 @@ if(isset($_POST['new_thread'])) {
                                     
                 <div class="modal-body">
                     <form method="POST">
-                        <input type="type" id="cID_new_thread" name="cTID">
+                        <input type="type" id="cID_new_thread" name="cTID" hidden>
                         <div class="row">
                             <div class="col-md-6">
                                 <label>New Thread Type</label>
@@ -374,9 +395,19 @@ if(isset($_POST['new_thread'])) {
                                         foreach($threads as $thread) {
                                             if ($thread instanceof \HelpScout\model\thread\LineItem) {
                                                 if ($thread instanceof \HelpScout\model\thread\Customer) {
-                                                    $convo_message = $thread->getBody();
-                                                    $garbage= array('<div dir="ltr">','</div>');
-                                                    $cleaned = str_replace($garbage, "",$convo_message);
+                                                    $convo_message = $thread->getBody()."<br /><br />";
+
+                                                    $att_url = "";
+                                                    if($thread->getAttachments()) {
+                                                        $convo_message .= "Attachments: <br />";
+                                                        foreach($thread->getAttachments() as $att) {
+                                                            //$att_url .= "<a href='".$att->getUrl()."'>".$att->getFileName()."</a>";
+                                                            $att_url .= "<a href='".$att->getUrl()."'><img src='".$att->getUrl()."' title='".$att->getFileName()."'  onload='imgLoaded()'></a><br /><br />";
+                                                        }
+                                                    }
+
+                                                    $cleaned = htmlentities($convo_message);
+
                                                     array_push($th_arr, "Message from Customer||+||<span style='float: right;'>".$thread->getCreatedAt()."</span>||+||<p>".$cleaned."</p>~^^^~");
                                                 } 
                                                 else if ($thread instanceof \HelpScout\model\thread\Message) {
@@ -394,8 +425,7 @@ if(isset($_POST['new_thread'])) {
                                             $thArrCnt++;
                                         }
                                     }
-                                    $sagbot= array('<div dir="ltr">','</div>');
-                                    $cMsg = str_replace($sagbot, "",$convo_message);
+                                    $cMsg = htmlentities($convo_message);
 
                                     ?>
                                         <div class="grid_9">
@@ -404,7 +434,7 @@ if(isset($_POST['new_thread'])) {
                                             </div>
                                             <div class="grid_4 omega">
                                                 <?php if($not_found == 0) { ?>
-    <a href="#" class="open-modal" data-cid="<?=$t_cust_id?>" data-id="<?=$convo_id?>" data-no="<?=$convo_number?>" data-subject="<?=$convo_email_subject?>" data-mes="<?=$cMsg?>" data-threadmsg="<?=$th_arr_fin?>">
+    <a href="#" class="open-modal" data-cid="<?=$t_cust_id?>" data-id="<?=$convo_id?>" data-no="<?=$convo_number?>" data-subject="<?=$convo_email_subject?>" data-mes="<?=$cMsg?>" data-atturl="<?=$att_url?>" data-threadmsg="<?=$th_arr_fin?>">
                                                 <strong><?php echo $t_bname; ?></strong></a> <br>
                                                 <?php
                                                     echo $t_cust_fname." ".$t_cust_lname."<br>".
@@ -463,6 +493,15 @@ if(isset($_POST['new_thread'])) {
             $("#lbl_th").empty();
             $("#id_you_like_div_none").empty();
         })
+
+        $('#updateTicket').on('hidden.bs.modal', function (e) {
+            $('#rad1').removeAttr('checked');
+            $('#rad2').removeAttr('checked');
+            document.getElementById("commit_status").value = "";
+            $('#commit_subj').prop('disabled', false);
+            document.getElementById("commit_subj").value = "";
+            document.getElementById("commit_msg").value = "";
+        })
     });
 
     
@@ -481,12 +520,14 @@ if(isset($_POST['new_thread'])) {
             tNo = _self.data('no'),
             tSubj = _self.data('subject'),
             tMsg = _self.data('mes'),
+            tMsgAtt = _self.data('atturl'),
             cID = _self.data('cid'),
             threads = _self.data('threadmsg');
         $("#tID").val(tID);
         $("#tNo").val(tNo);
         $("#tSubj").val(tSubj);
         $("#tMsg").html(tMsg);
+        $("#tMsgAtt").html(tMsgAtt);
         $("#cID").val(cID);
 
         if(threads) {
@@ -535,16 +576,20 @@ if(isset($_POST['new_thread'])) {
         window.open('customer?id='+cID+'&ticket_id='+tID);
    }
 
-    function tNote() {
-        $('#commit_subj').prop('disabled', true);
-    }
-
-    function tMsg() {
-        $('#commit_subj').prop('disabled', false);
+    function tType(tVal) {
+        if(tVal == 1) {
+            $('#commit_subj').prop('disabled', true);
+        } else {
+            $('#commit_subj').prop('disabled', false);
+        }
     }
 
     function insertAfter(referenceNode, newNode) {
         referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+    }
+
+    function imgLoaded() {
+        //$("#spanloader").hide();
     }
 </script>
 <?php } ?>

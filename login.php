@@ -11,8 +11,15 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/ursa/style-login.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="js/field_trappings/error_msg.css">
-	<link rel="stylesheet" type="text/css" href="css/ursa/style-login-xs.css" media="screen and (max-width:500px)">
+	
+	 <!--960 grid stylesheet links-->
+
+    <link href="css/960.css" rel="stylesheet"/>
+    <link href="css/reset.css" rel="stylesheet"/>
+    <link href="css/text.css" rel="stylesheet"/>
+
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/field_trappings/login.js"></script>
@@ -65,12 +72,16 @@
 		});
 	</script>
 
+	
+<div class="container_12">
+
 	<div id="login_box" class="login_container">
 		<div class="login_title">
 			<!--<span style="color: #FFB30F;">BIG</span><span>LOCO</span>-->
 			<!--<span>Welcome to Little Dipper</span>-->
 			<img src="img/big_yellow_ursa_logo.png">
 		</div>
+<div class="wholecontainer">		
 		<div class="login_inner">
 			<!--<div class="col-1">
 				<div class="row">
@@ -79,41 +90,58 @@
 			</div>-->
 		<?php
 			if($found==false) {
-				echo '<div class="col-1 error_all">
+				echo '<div class="grid_1 error_all">
 						<p>Email/Password incorrect.</p>
 					  </div>';
 			}
 		?>
-			<div class="col-1">
+			<div class="grid_6 alpha">
 				<form action="" method="POST" onsubmit="return check_login_fields();" name="login_form">
-					<div class="row">
+				<div class="container_12 alpha emailfield">
+					<div class="grid_6">
 						<!--<label>Email</label>&nbsp;&nbsp;-->
 						<label>&nbsp;</label>
 						<label class="error" for="email" generated="true"></label>
 						<input type="text" class="form-control" name="email" id="email" value="<?php if(@$_POST) { echo @$email; } ?>" onkeypress="hideMsgF1()" placeholder="Email">
 					</div>
-					<div class="row">
+					</div>
+					<div class="container_12 omega passwordfield">
+					<div class="grid_6">
 						<!--<label>Password</label>&nbsp;&nbsp;-->
 						<label>&nbsp;</label>
 						<label class="error" for="password" generated="true"></label>
 						<input type="password" class="form-control" name="password" id="password" onkeypress="hideMsgF2()" placeholder="Password">
 					</div>
-					<div class="row">
+					</div>
+					<br>
+					<div class="container_12 alpha">
+					<div class="grid_2">
 						<div class="remember_me">
 					    	<input type="checkbox" name="remember" value="remember_yes" title="URSA will remember your face for 1hour">
 					    </div>
-					    <label class="lbl_rmmbr_me">Remember Me</label>
+					    <label class="lbl_rmmbr_me"> &nbspRemember Me</label>
 				  	</div>
-					<div class="row" >
+				  	</div>
+
+				  	<div class="container_12 omega	">
+					<div class="grid_2" >
 						<div class="login_frgt_pass">
 							<a href="#" onclick="forgot_pass();">Forgot your Password?</a>
 						</div>
+					<div class="container_12">
+						<div class="grid_2 omega" style="margin-left:-1em;">
 						<input class="login_sbmt" type="submit" name="login_btn" value="Log In">
+					</div>
+					</div>
+					</div>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
+	</div>
+	</div>
+
 
 	<style>
 		.flexContainer {
@@ -152,15 +180,20 @@
 		<!--<div class="login_title">
 
 		</div>-->
+
+		<div class="container_12">
 		<div class="login_inner">
-			<div class="col-1">
-				<div class="row">
+			<div class="grid_8 push_2 alpha">
+			<br>
+				<div class="grid_8">
+					
 					<?php if($reset_pass_success == 0) { ?>
-						<h2>Reset Your Password</h3>
-						<p>In order to reset your password, we must send you a link to your email to verify your account. What email address did you sign up with?</p>
+						<div class="resetyourpass">Reset Your Password </div>
+					
+						<div class="resetyourpass1"><p>In order to reset your password, we must send you a link to your email to verify your account. What email address did you sign up with?</p></div>
 					<?php } else { ?>
-						<h2>New Password Created</h3>
-						<p>An email was sent to your email address containing a link to verify your password reset request.</p>
+						<div class="resetyourpass">New Password Created</div>
+							<div class="resetyourpass1"><p>An email was sent to your email address containing a link to verify your password reset request.</p></div>
 					<?php } ?>
 				</div>
 
@@ -170,12 +203,15 @@
 				</div>
 
 				<form action="" method="POST" onsubmit="return check_resetpass_fields();" name="reset_pass_form">
-					<div class="row">
+				<div class="container_12">
+					<div class="grid_6 push_1 alpha">
 						<label>&nbsp;</label>
 						<label class="error" for="resetpass_email" generated="true"></label>
 						<input type="text" class="form-control" name="resetpass_email" id="resetpass_email" onkeypress="hideMsgF3()" placeholder="Email">
 					</div>
-					<div class="row">
+					</div>
+					<div class="container_12">
+					<div class="grid_6 push_1 alpha">
 						<label>&nbsp;</label>
 						<label class="error" for="resetpass_newpass" generated="true"></label>
 						<div class="flexContainer">
@@ -186,9 +222,15 @@
 							<button type="button" id="eye" class="glyphicon glyphicon-eye-open" title="Show Password"></button>
 						</div>
 					</div>
-					<div class="row">
+					</div>
+					<br>
+					<div class="container_12">
+						<div class="grid_2 push_1 alpha">
 						<button class="go_back_login" onclick="go_back_login();">&#8592;Go Back</button>
+						</div>
+						<div class="grid_2 push_3 omega">
 						<input class="login_sbmt reset_pass_btn" name="reset_btn" type="submit" value="Reset Password">
+						</div>
 					</div>
 				</form>
 				<?php } else { ?>
@@ -200,7 +242,8 @@
 			</div>
 		</div>
 	</div>
-
+</div>
+</div>
 
 	
 

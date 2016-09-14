@@ -21,7 +21,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>URSA</title>
+        <title>URSA-GRID</title>
         <link rel="Shortcut icon" href="img/ursa_tab_logo.png"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
   

@@ -60,8 +60,17 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
   <link rel="stylesheet" type="text/css" href="css/ursa/style-verifypass.css">
+   <link rel="stylesheet" type="text/css" href="css/ursa/style-login.css">
   <link rel="stylesheet" type="text/css" href="js/field_trappings/error_msg.css">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
   
+ <!--960 grid stylesheet links-->
+
+    <link href="css/960.css" rel="stylesheet"/>
+    <link href="css/reset.css" rel="stylesheet"/>
+    <link href="css/text.css" rel="stylesheet"/>
+
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/field_trappings/login.js"></script>
@@ -111,23 +120,23 @@
 <?php 
   if($go_reset != 0) { 
     if($verified == true) {
-?><div class="container">
+?>
+
+<div class="full-width-div">
+<div class="container_12">
   
-
-
-
-  <div id="success_information" class="row">
-  <div class="col-md-offset-3 col-md-6" style="text-align: center;">
+  <div id="success_information" class="grid_10 alpha">
+  <div class="grid_8 push_2 alpha" style="text-align: center;">
       <div class="panel-body" id="demo">
-      <div class="row">
-      <div class="alert alert-danger" role="alert" col md-3>
-             <strong>VERIFY RESET PASSWORD ERROR! </strong>
+      <div class="grid_7  omega">
+      <div class="alert alert-danger" role="alert">
+            <div class="resetyourpass"> <strong>VERIFY RESET PASSWORD ERROR! </strong></div>
             </div>
     </div>
    
-        <div id="verify">
-               <h2> Verification Code Mismatch! </h2> 
-        </div>
+       
+               <div class="resetyourpass1"><strong>Verification Code Mismatch!</strong></div>
+      
         <div id="errormessage"> <br><h3>It's either this link was already been used or you requested for a new password reset.</h3></i>
       </div>
 
@@ -138,12 +147,12 @@
             
               
 <?php } if($success_request == true) { ?>
-  <div class="container">
-      <div id="success_information" class="row">
-        <div class="col-md-offset-3 col-md-6" style="text-align: center;">
+  <div class="container_12">
+      <div id="success_information" class="grid_10 alpha">
+        <div class="grid_8 push_2 alpha" style="text-align: center;">
             <div class="panel-body" id="demo">
-             <div class="row">
-             <div class="alert alert-success" role="alert" col md-3>
+             <div class="grid_7  omega">
+             <div class="alert alert-success" role="alert" >
                
                <form style="text-align:center;">
 
@@ -160,13 +169,13 @@
     } 
   } else { 
 ?> 
-<div class="container">
-<div id="success_information" class="row">
-  <div class="col-md-offset-3 col-md-6">
+<div class="container_12">
+<div id="success_information" class="grid_10 alpha">
+  <div class="grid_8 push_2 alpha">
       <div class="panel-body" id="demo">
-      <div class="row" style="text-align:center;">
-        <div class="alert alert-info" role="alert" col md-3 >
-         <strong>YOU ARE REDIRECTED HERE BECAUSE YOU'RE ON YOUR LOCALHOST</strong> 
+      <div class="grid_7  omega" style="text-align:center;">
+        <div class="alert alert-info" role="alert">
+         <div class="resetyourpass"> <strong>YOU ARE REDIRECTED HERE BECAUSE YOU'RE ON YOUR LOCALHOST</strong> </div>
         </div>
  
           

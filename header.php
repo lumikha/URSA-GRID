@@ -105,6 +105,7 @@
                                         <li id="acc_tab2"><a class="nl" href="#dashboard" data-toggle="tab">Dashboard</a></li>
                                      </ul>
                                     <?php }else { ?>
+
                                     <ul class="nav nav-pills nav-stacked text-center" id="myTab">
                                     <?php  if($current_page=="summary.php") { ?>
                                     <li><a id="btn_account" class="nl disabledTab hidden" data-toggle="tab">Hidden</a></li>
@@ -114,8 +115,9 @@
                                     <li><a id="btn_customer" class="nl disabledTab" data-toggle="tab" >Customer</a></li>
                                     <li><a id="btn_quality" class="nl disabledTab" data-toggle="tab" >Quality</a></li>
                                     <li><a id="btn_dashboard" class="nl disabledTab" data-toggle="tab" >Dashboard</a></li>
-                                    <li><a id="btn_center" class="nl disabledTab" data-toggle="tab" >Center</a></li>
+                                    <li><a id="btn_center" class="nl disabledTab" data-toggle="tab" >Center</a></li></ul>
                                     <?php } ?>
+
                                     <?php  if($current_page=="customer.php") { ?>
                                     <li><a id="btn_account" class="nl" href="#account" data-toggle="tab">Account</a></li>
                                     <li><a id="btn_provisioning" class="nl" href="#provisioning" data-toggle="tab" >Provisioning</a></li>
@@ -128,8 +130,8 @@
                                     <?php } ?>
                                 </ul>
                                     <?php if($current_page == "customer.php") { ?>
-                                     <div class="row">
-                                        <div class="col-md-6 dynamic" hidden>
+                                     <div class="container_12">
+                                        <div class="grid_6 alpha" hidden>
                                      </div>    
                                 </div>
                                     <?php } ?>

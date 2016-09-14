@@ -105,19 +105,19 @@ if(isset($_POST['new_thread'])) {
                     </select>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
+            <div class="container_12 alpha">
+                <div class="grid_10 alpha">
                     <label>Subject</label>
                     <input type="text" class="form-control" name="ticket_subject" disabled>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
+            <div class="container_12">
+                <div class="grid_10">
                     <label>Note</label>
                     <textarea class="form-control" style="resize:vertical" name="ticket_note" disabled></textarea>
                 </div>
             </div>
-            <div class="row">
+            <div class="container_12 omega">
                 <center>
                     <input type="Submit" class="btn btn-danger" name="ticket_save" value="Submit">
                 </center>
@@ -285,7 +285,7 @@ if(isset($_POST['new_thread'])) {
         
     </div>
     <div class="container_12">
-        <div class="grid_5 push_3" style="overflow-y: scroll; overflow-x: hidden; height: 450px; margin-top:2em;">
+        <div class="grid_6 push_2" style="overflow-y: scroll; overflow-x: hidden; height: 450px; margin-top:2em;">
 
             <?php
             if($connectHS == false) {
@@ -396,7 +396,7 @@ if(isset($_POST['new_thread'])) {
 
                                     ?>
                                         <div class="grid_9">
-                                            <div class="grid_1 alpha">
+                                            <div class="grid_1 alpha round-div">
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             </div>
                                             <div class="grid_4 omega">

@@ -115,7 +115,7 @@
     <div class="tab-content">
     <div class="tab-pane fade" id="account">
     <form id="acc_account_form" action="" method="POST">
-        <div class="grid_10 alpha">
+        <div class="grid_10 alpha" style="margin-top:-2em;">
             <div class="grid_5 alpha">
                 <input type="text" name="acc_b_name" class="form-control" placeholder="Business Name" value="<?php echo $business_name; ?>">
             </div>

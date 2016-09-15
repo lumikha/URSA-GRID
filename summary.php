@@ -276,13 +276,14 @@ if(isset($_POST['new_thread'])) {
                                 </select>
                             </div>
                         </div>
-
+                        <!--
                         <div class="row">
                             <div class="col-md-12">
                                 <label>Subject</label>
                                 <input type="text" class="form-control" id="commit_subj" name="subject">
                             </div>
                         </div>
+                        -->
                         <div class="row">
                             <div class="col-md-12">
                                 <label>Message</label>

@@ -6,6 +6,14 @@
 	<title></title>
 </head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	 <!--960 grid stylesheet links-->
+
+    <link href="css/960.css" rel="stylesheet"/>
+    <link href="css/reset.css" rel="stylesheet"/>
+    <link href="css/text.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
@@ -41,6 +49,8 @@
 	</script>
 <body ng-app="myapp" onload="check();">
 		<!--SEARCH ENGINE -->
+		
+		<div class="container_12"  style="margin-top:2em;">
 		<div ng-controller="newController" style="position:fixed;z-index: 10;">
 		<div class="well-lg">
 		<a href="" id="trigger" ><span class="btn btn-primary btn-md glyphicon glyphicon-search" aria-hidden="true"></span></a>
@@ -64,19 +74,20 @@
 			</div>
 		</div>
 	</div>
+	</div>
 	<!-- END SEARCH -->
 
 
 
 	<!--SAMPLE  -->
-	<div class="row">
-		<div class="col-md-offset-1 col-md-10">
+	<div class="container_12" style="margin-top:2em;">
+		<div class="grid_10 push_2 alpha">
 		<h1 style="text-align:right">Hey Jasper!</h1>
 
 		</div>
 	</div>
-	<div class="row">
-			<div class="col-md-offset-1 col-md-10">
+	<div class="container_12">
+			<div class="grid_10 alpha">
 
 	<ul class="nav nav-tabs">
 	  <li class="active"><a data-toggle="tab" href="#home">Summary</a></li>
@@ -85,7 +96,7 @@
 	  <li><a data-toggle="tab" href="#menu3">Dashboard</a></li>
 	  <li><a data-toggle="tab" href="#menu4">Admin</a></li>
 	</ul>
-
+	
 	<div class="tab-content">
 	  <div id="home" class="tab-pane fade in active">
 	    <h3>Summary</h3>

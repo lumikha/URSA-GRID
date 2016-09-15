@@ -6,6 +6,15 @@
 	<title>LiLDip | Search</title>
 </head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	 <!--960 grid stylesheet links-->
+
+    <link href="css/960.css" rel="stylesheet"/>
+    <link href="css/reset.css" rel="stylesheet"/>
+    <link href="css/text.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="js/angular.min.js"></script>
@@ -64,8 +73,8 @@
 		<div ng-app="myapp">
 			<div ng-controller="newController">
 			<div class="well-lg">
-			<div class="row">
-				<div class="col-md-offset-1 col-md-6">
+			<div class="container_12" style="margin-top: 2em;">
+				<div class="grid_12 alpha">
 					<form name="myForm">
 						<input type="text" class="form-control" ng-keypress="currentPage=0" onkeyup="return check();" id="search" size="30" name="search" ng-model="search" placeholder="Search">
 					</form>

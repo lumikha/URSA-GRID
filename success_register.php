@@ -9,6 +9,15 @@
 	<title>Enroll Customer</title>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
   <link rel="stylesheet" type="text/css" href="js/dataTables/dataTables.bootstrap.min.css"/>
+
+   <!--960 grid stylesheet links-->
+
+    <link href="css/960.css" rel="stylesheet"/>
+    <link href="css/reset.css" rel="stylesheet"/>
+    <link href="css/text.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/>
+
+
   <style>
   	#success_information a{
   		text-decoration: none;
@@ -16,8 +25,8 @@
   </style>
 </head>
 <body>
-<div id="success_information" class="row">
-	<div class="col-md-offset-3 col-md-6" style="text-align: center;">
+<div id="success_information" class="container_12">
+	<div class="grid_12 alpha" style="text-align: center;">
     	<div class="panel-body" id="demo">
       		<h2>Success!</h2><br/><br/>
       		<h4>Created account: </h4>

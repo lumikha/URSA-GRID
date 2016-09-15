@@ -1,6 +1,7 @@
 <?php
     require 'header.php';
 
+
     if(isset($_POST['submit_ticket'])) {
         echo $_POST['bname']."<br/>";
         echo $_POST['tbc_date']."<br/>";
@@ -10,33 +11,33 @@
     }
 ?>
 
-    <form id="sales_form" action="" method="POST" style="margin-top: -60px;">
-        <div class="row">
-            <div class="col-md-1" style="float: right;">
-                <button class="btn btn-danger" type="submit" name="submit_ticket">Ticket</button>
+    <form id="sales_form" action="" method="POST">
+        <div class="container_12" style="margin-top:-1em; margin-bottom:1em;">
+            <div class="grid_1 push_11" >
+               <div class=" buttonsales"> <button class="btn btn-danger" type="submit" name="submit_ticket" >Ticket</button></div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
+        <div class="container_12">
+            <div class="grid_6 push_2 alpha">
                 <input type="text" class="form-control" name="bname" placeholder="Business Name" value="<?php echo $business_name; ?>">
             </div>
-            <div class="col-md-2">
+            <div class="grid_1 push_2">
                 <p><?php echo $sales_date; ?></p>
             </div>
-            <div class="col-md-4">
+            <div class="grid_4 push_2 omega">
                 <input type="text" class="form-control" name="tbc_date" placeholder="Trial/Bill/Cancel Date" value="<?php echo $cust_search_state; ?>">
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
+        <div class="container_12">
+            <div class="grid_6 push_2 alpha">
                 <input type="text" class="form-control" name="sctr" placeholder="Sales Center" value="<?php echo $sales_center; ?>" readonly>
             </div>
-            <div class="col-md-6">
+            <div class="grid_5 push_2 omega">
                 <input type="text" class="form-control" name="sagnt" placeholder="Sales Agent" value="<?php echo $sales_agent; ?>" readonly>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
+        <div class="container_12">
+            <div class="grid_4 push_2 alpha">
                 <select class="form-control">
                     <optgroup label="Current">
                     <?php
@@ -54,7 +55,7 @@
                     </optgroup>
                 </select>
             </div>
-            <div class="col-md-4">
+            <div class="grid_4 push_2 ">
                 <select class="form-control">
                     <optgroup label="Current">
                     <?php
@@ -70,7 +71,7 @@
                     </optgroup>
                 </select>
             </div>
-            <div class="col-md-4">
+            <div class="grid_3 push_2 omega">
                 <select class="form-control">
                     <optgroup label="Current">
                     <?php
@@ -89,8 +90,8 @@
                 </select>
             </div>
         </div>
-        <div class="row">
-            <div class="dropdown col-md-4">
+        <div class="container_12">
+            <div class="dropdown grid_4 push_2 alpha">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     Cancellation Reason
                     <span class="caret"></span>
@@ -103,7 +104,7 @@
                     <li><a href="#">Separated link</a></li>
                 </ul>
             </div>
-            <div class="col-md-4">
+            <div class="grid_4 push_2 omega">
                 <input type="text" class="form-control" placeholder="Refund Amount">
             </div>
         </div>

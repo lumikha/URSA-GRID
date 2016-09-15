@@ -731,18 +731,20 @@ if(@$_POST['ticket_save']){
   </div><!-- /.modal -->   
 
 
-    <div class="col-md-10 col-sm-12" style="margin-top:-90px;">
+    <div class="container_12">
     <div id="boxes" class="row text-center">
-        <div class="cust_id col-lg-2 col-md-2 col-sm-3 col-xs-12 col-md-offset-1 col-sm-offset-1" style="padding: 1em;margin-right:1em;margin-bottom:1em;"></div>
-        <div class="bill_sum col-lg-2 col-md-2 col-sm-4 col-xs-12" style="padding: 1em;margin-right:1em;margin-bottom:1em;"></div>
-        <div class="last_activity col-lg-2 col-md-1 col-sm-3 col-xs-12" style="padding: 1em;margin-right:1em;margin-bottom:1em;"></div>
-        <div class="col-lg-2 col-md-2 col-sm-5 col-xs-12 col-sm-offset-1 col-md-offset-0" style="padding: 1em;margin-right:1em;margin-bottom:1em;border:solid #A60800 2px;color:#A60800"><a href="#" onclick="return addTicket();"><strong>Ticket</strong></a></div>
-        <div class="col-lg-2 col-md-2 col-sm-5 col-xs-12" style="padding: 1em;margin-right:1em;margin-bottom:1em;border:solid #340570 2px;color:#340570"><strong>Talkdesk</strong></div>
+        <div class="cust_id grid_2 alpha" style="padding: 1em;margin-right:1em;margin-bottom:1em;"></div>
+       
+        <div class="bill_sum grid_2" style="padding: 1em;margin-right:1em;margin-bottom:1em;"></div>
+        <div class="last_activity grid_2" style="padding: 1em;margin-right:1em;margin-bottom:1em;"></div>
+        <div class="grid_2" style="padding: 1em;margin-right:1em;margin-bottom:1em;border:solid #A60800 2px;color:#A60800"><a href="#" onclick="return addTicket();"><strong>Ticket</strong></a></div>
+        <div class="grid_2 omega" style="padding: 1em;margin-right:1em;margin-bottom:1em;border:solid #340570 2px;color:#340570"><strong>Talkdesk</strong></div>
         <div class="row">
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 col-md-offset-1" style="padding: 1em;">
+    </div>
+    <div class="container_12">
+        <div class="grid_11 alpha" style="padding: 1em;">
 
             <?php
                 $array = $all_tickets->rows;
@@ -764,11 +766,11 @@ if(@$_POST['ticket_save']){
                             $t_ln = $object2->value->customer_last_name;
                             $t_bp = $object2->value->business_phone_no;
                     ?>
-                            <div class="row">
-                                <div class="col-md-1 col-xs-3 round-div">
+                            <div class="container_12">
+                                <div class="grid_2 alpha round-div">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 </div>
-                                <div class="col-md-5 col-xs-9">
+                                <div class="grid_5 omega">
                                     <a href="customer.php?id=<?php echo $t_ci; ?>&ticket_id=<?php echo $ticket_id; ?>" target="_blank"><strong><?php echo $t_bn; ?></strong></a> <br>
                                     <?php
                                         echo $t_fn." ".$t_ln."<br>"

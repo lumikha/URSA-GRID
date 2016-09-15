@@ -184,7 +184,7 @@ if(isset($_POST['new_thread'])) {
                         <div class="row">
                             <div class="col-md-12">
                                 <label>Message</label>
-                                <div dir="ltr" class="form-control" readonly style="overflow:auto;height:300px; background-color: #fff;">
+                                <div id="tBody" class="form-control" readonly style="overflow:auto;height:300px; background-color: #fff;">
                                     <span id="tMsg" style="height: auto;" readonly></span>
                                     <style>
                                     #tMsgAtt {
@@ -393,6 +393,7 @@ if(isset($_POST['new_thread'])) {
                                     if ($conversation) {
                                         $threads = $conversation->getThreads();
                                         $th_arr_fin = "";
+                                        $imgTypes = array("image/png", "image/gif", "image/jpeg");
                                         foreach($threads as $thread) {
                                             if ($thread instanceof \HelpScout\model\thread\LineItem) {
                                                 if ($thread instanceof \HelpScout\model\thread\Customer) {
@@ -402,8 +403,11 @@ if(isset($_POST['new_thread'])) {
                                                     if($thread->getAttachments()) {
                                                         $convo_message .= "Attachments: <br />";
                                                         foreach($thread->getAttachments() as $att) {
-                                                            //$att_url .= "<a href='".$att->getUrl()."'>".$att->getFileName()."</a>";
-                                                            $att_url .= "<a href='".$att->getUrl()."'><img src='".$att->getUrl()."' title='".$att->getFileName()."'  onload='imgLoaded()'></a><br /><br />";
+                                                            if(in_array($att->getMimeType(), $imgTypes) ) {
+                                                                $att_url .= "<a href='".$att->getUrl()."'><img src='".$att->getUrl()."' title='".$att->getFileName()."'  onload='imgLoaded()'></a><br /><br />";
+                                                            } else {
+                                                                $att_url .= "<a class='btn' href='".$att->getUrl()."' target='_blank'>".$att->getFileName()."</a><br /><br />";
+                                                            }
                                                         }
                                                     }
 
@@ -493,6 +497,10 @@ if(isset($_POST['new_thread'])) {
             $("#magic_buttons").empty();
             $("#lbl_th").empty();
             $("#id_you_like_div_none").empty();
+        })
+
+        $('#viewTicket').on('shown.bs.modal', function () {
+            $('#tBody').scrollTop(0);
         })
 
         $('#updateTicket').on('hidden.bs.modal', function (e) {

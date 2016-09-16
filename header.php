@@ -36,6 +36,9 @@
     <link href="css/reset.css" rel="stylesheet"/>
     <link href="css/text.css" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css"/>
+   
+   <!--media queries-->
+    <!-- <link rel="stylesheet" type="text/css" href="mediaquery.css"> -->
   </head>
     <body>
 
